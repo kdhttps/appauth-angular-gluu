@@ -1,15 +1,14 @@
-# App Auth Angular
+# App Auth Angular with Gluu CE
 
-[App-Auth JS](https://github.com/openid/AppAuth-JS) integration with the Angular App.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+[App-Auth JS](https://github.com/openid/AppAuth-JS) integration with the Angular App and Gluu CE OpenID Connect Provider.
 
 ![angular-flow](./src/assets/angular-flow.gif)
 
 ## Prerequisites
 
-1. Node JS >= 10.x.x
-2. @angular/cli >= 8.3.21
-3. Auth0 client - Currently for I am using auth0.com as a OP Server. Demo should work with every OP Provider. 
+1. Node JS >= 12.x.x
+1. @angular/cli >= 10.1.2
+1. [Gluu CE](https://gluu.org/docs/gluu-server) >= 4.x.x, I am using Gluu Server as a OpenID Connect Provider. [Check here for more details about Gluu Server](https://gluu.org/docs/gluu-server)
 
 ## Configuration
 
