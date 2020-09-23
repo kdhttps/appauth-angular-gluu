@@ -55,7 +55,8 @@ export class AuthenticationService {
           extras = {};
           extras.code_verifier = this.request.internal.code_verifier;
         }
-
+        
+        // A. First, you need to create a token request object
         const tokenRequest = new TokenRequest({
           client_id: environment.clientId,
           redirect_uri: environment.redirectURL,
@@ -65,13 +66,18 @@ export class AuthenticationService {
           extras
         });
 
+        // B. Again get configuration information
         AuthorizationServiceConfiguration.fetchFromIssuer(environment.OPServer, new FetchRequestor())
           .then((oResponse: any) => {
             this.configuration = oResponse;
+            
+            // C. Hit `/token` endpoint and get token
             return this.tokenHandler.performTokenRequest(this.configuration, tokenRequest);
           })
           .then((oResponse) => {
             localStorage.setItem('access_token', oResponse.accessToken);
+            
+            // do operation now as per your need
             this.router.navigate(['/profile']);
           })
           .catch(oError => {
