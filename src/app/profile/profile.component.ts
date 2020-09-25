@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
   accessToken: string = null;
   userInfo: any = null;
   error: any = null;
+  images: any = null;
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,13 @@ export class ProfileComponent implements OnInit {
     this.http.get(environment.OPServer + environment.userInfoEndpoint, {headers: {authorization: 'Bearer ' + this.accessToken}})
       .subscribe((response) => {
         this.userInfo = response;
+      });
+
+    this.http.get(`${environment.ggEndpoint}/posts`, {headers: {authorization: 'Bearer ' + this.accessToken}})
+      .subscribe((response) => {
+        this.images = response;
+      }, (error) => {
+        console.log(error);
       });
   }
 }

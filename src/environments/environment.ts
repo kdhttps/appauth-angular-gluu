@@ -4,11 +4,12 @@
 
 export const environment = {
   production: false,
-  clientId: '2403209d-dc08-40d2-a948-5ecef63b709e',
+  clientId: '3534a5ab-62d5-485a-bc80-392d341394b5',
   OPServer: 'https://gluu.mali.org',
   redirectURL: 'http://localhost:4200/callback',
   scope: 'openid email profile',
-  userInfoEndpoint: '/oxauth/restv1/userinfo'
+  userInfoEndpoint: '/oxauth/restv1/userinfo',
+  ggEndpoint: 'https://gluu.mali.org:9443'
 };
 
 /*
